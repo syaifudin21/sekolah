@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/daftar', 'HomeController@daftar')->name('daftar');
+Route::post('/daftar', 'siswa\SiswaDaftarController@tambah')->name('siswa.baru');
