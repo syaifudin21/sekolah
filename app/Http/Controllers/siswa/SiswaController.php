@@ -18,9 +18,9 @@ class SiswaController extends Controller
     public function index()
     {
     	$siswa = Profil_siswa::where('nim',Auth::user('siswa')->nisn)->first();
-    	// if ($siswa->status == 'Daftar') {
-    	// 	return redirect('siswa/baru');
-    	// }
+    	if ($siswa->status == 'Daftar') {
+    		return redirect('siswa/baru');
+    	}
         return view('siswa.dasbord', compact('siswa'));
     }
     public function baru()

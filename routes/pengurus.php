@@ -17,6 +17,10 @@ Route::get('/siswabaru/pengumuman', 'layanan\PengumumanController@pengurus_siswa
 Route::get('/siswabaru/pengumuman/{id}/{slug}', 'layanan\PengumumanController@pengurus_id');
 Route::get('/siswabaru/pengumuman/update/{id}/{slug}', 'layanan\PengumumanController@pengurus_update');
 
+Route::get('/pengurus/pengumuman', 'layanan\PengumumanController@pengurus_pengurus');
+Route::get('/pengurus/pengumuman/{id}/{slug}', 'layanan\PengumumanController@pengurus_pengurus_id');
+Route::get('/pengurus/pengumuman/update/{id}/{slug}', 'layanan\PengumumanController@pengurus_pengurus_update');
+
 Route::get('/siswabaru', 'pengurus\PengurusController@baru');
 Route::get('/siswabaru/{id}', 'pengurus\PengurusController@siswaprofil');
 Route::put('/siswabaru', 'pengurus\PengurusController@siswaupdate')->name('pengurus.siswabaru.update');
@@ -62,3 +66,6 @@ Route::get('/prestasi/{id}', 'pengurus\PrestasiController@prestasiid');
 Route::get('/prestasi/edit/{id}', 'pengurus\PrestasiController@edit');
 Route::put('/prestasi/update', 'pengurus\PrestasiController@update')->name('prestasi.update');
 Route::delete('/prestasi/{id}', 'pengurus\PrestasiController@delete');
+
+Route::get('pengurus/agenda', 'layanan\AgendaController@pengurus');
+Route::get('pengurus/agenda/update/{id}', 'layanan\AgendaController@pengurus_update');

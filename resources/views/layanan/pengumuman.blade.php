@@ -132,7 +132,7 @@
                 @endif
             </div>
         </div>
-        <div class="form-group row">
+         <div class="form-group row">
             <label for="waktu_selesai" class="col-sm-4 col-form-label text-md-right">Waktu Selesai</label>
             <div class="col-md-6">
                 <input id="datetimepicker2" type="text" class="form-control{{ $errors->has('waktu_selesai') ? ' is-invalid' : '' }}" name="waktu_selesai" value="{{ old('waktu_selesai') }}" required autofocus>
@@ -154,6 +154,23 @@
                 @endif
             </div>
         </div>
+        @if($auth == 'Pengurus')
+        <div class="form-group row">
+            <label for="status" class="col-sm-4 col-form-label text-md-right">Status Tampil</label>
+            <div class="col-md-6">
+                <select class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status">
+                    <option value="" disabled selected >Pilih Status Tampil</option>
+                    <option value="Tampil" {{($errors->has('status') =='Tampil')? 'selected' : ''}}>Tampil</option>
+                    <option value="Sembunyikan" {{($errors->has('status') =='Sembunyikan')? 'selected' : ''}}>Sembunyikan</option>
+                </select>
+                @if ($errors->has('status'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('status') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        @endif
 
         
             <div class="form-group row">
@@ -169,12 +186,9 @@
 
 @section('script')
 
-<script type="text/javascript" src="http://smartschool.lc/js/jquery.datetimepicker.full.js"></script>
-<script type="text/javascript" src="http://smartschool.lc/js/jquery.datetimepicker.full.min.js"></script>
-<script type="text/javascript" src="http://smartschool.lc/js/jquery.datetimepicker.min.js"></script>
-<script type="text/javascript">
-    $('#example').DataTable();
-</script>
+<script type="text/javascript" src="{{asset('js/jquery.datetimepicker.full.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.datetimepicker.full.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.datetimepicker.min.js')}}"></script>
 <script type="text/javascript">
     jQuery.datetimepicker.setLocale('id');
 

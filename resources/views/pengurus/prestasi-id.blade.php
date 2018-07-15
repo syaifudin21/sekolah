@@ -1,4 +1,4 @@
-@extends('sekolah.template-sekolah')
+@extends('pengurus.template-pengurus')
 
 @section('content')
 
@@ -49,6 +49,8 @@
 <table id="example" class="table table-hover table-sm" style="width:100%">
     <tr><td width="30%"><b>Prestasi</b></td><td><b>{{$prestasi->nama}}</b></td></tr>
     <tr><td>Deskripsi</td><td>{!!$prestasi->deskripsi!!}</td></tr>
+    <tr><td>Instalasi</td><td>{!!$prestasi->instalasi!!}</td></tr>
+    <tr><td>Tanggal Juara</td><td>{!!$prestasi->tanggal!!}</td></tr>
 </table>
 </div>
     </div>

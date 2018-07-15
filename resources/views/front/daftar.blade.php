@@ -16,7 +16,11 @@
 <div class="categories-wrapper blue darken-3">
   <div class="categories-container">
     <ul class="categories container">
-      <li class="active">Form Pendaftaran Siswa Baru</a></li>
+      <li class="active"> Form Pendaftaran Siswa Baru </a></li>
+      <li><a href="{{url('alur-pendaftaran-online')}}">Alur Pendaftaran Online</a></li>
+      <li><a href="{{url('brosur')}}">Brosur</a></li>
+      <li><a href="{{url('tatatertib')}}">Tata Tertib Sekolah</a></li>
+      <li><a href="{{url('hasil-seleksi')}}">Hasil Seleksi</a></li>
     </ul>
   </div>
 </div>

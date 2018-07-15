@@ -15,3 +15,7 @@ Route::delete('/artikel/{id}', 'layanan\ArtikelController@delete');
 Route::post('/pengumuman', 'layanan\PengumumanController@store')->name('pengumuman.tambah');
 Route::put('/pengumuman/update', 'layanan\PengumumanController@update')->name('pengumuman.update');
 Route::delete('/pengumuman/{id}', 'layanan\PengumumanController@delete');
+
+Route::post('/agenda', 'layanan\AgendaController@store')->name('agenda.tambah');
+Route::put('/agenda/update', 'layanan\AgendaController@update')->name('agenda.update');
+Route::delete('/agenda/{id}', 'layanan\AgendaController@delete');

@@ -135,6 +135,18 @@
                   Prestasi <span class="sr-only">(current)</span>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('pengurus/pengurus/agenda')}}">
+                  <span data-feather="users"></span>
+                  Agenda <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('pengurus/pengurus/pengumuman')}}">
+                  <span data-feather="users"></span>
+                  Pengumuman <span class="sr-only">(current)</span>
+                </a>
+              </li>
 
             </ul>
 

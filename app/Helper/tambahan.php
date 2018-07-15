@@ -67,6 +67,13 @@ function bulan_indo($bulan)
     
     return $tgl_indo;
 }
+function warna($no)
+{
+    $warna = ['red','teal','purple darken-2','red accent-4',' indigo darken-3',' teal darken-1','light-blue darken-4','lime darken-3','teal darken-4','amber darken-4'];
+    $tgl_indo = $warna[$no];
+    
+    return $tgl_indo;
+}
 
 function limit_words($string, $word_limit){
     $words = explode(" ",$string);

@@ -13,7 +13,7 @@ class PengumumanController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:pengurus')->only('pengurus', 'pengurus_siswabaru', 'pengurus_edit', 'pengurus_id', 'pengurus_update');
+        $this->middleware('auth:pengurus')->only('pengurus_siswabaru', 'pengurus_id', 'pengurus_update', 'pengurus_pengurus', 'pengurus_pengurus_id', 'pengurus_pengurus_update');
         $this->middleware('auth:sekolah')->only('sekolah');
     }
     public function pengurus_siswabaru()
@@ -46,6 +46,40 @@ class PengumumanController extends Controller
         $pengumuman = Pengumuman::find($id);
         return view('layanan.pengumuman-update', compact('template', 'pengumuman', 'auth', 'id_auth', 'objek', 'menu'));
     }
+
+    //pengurus
+    public function pengurus_pengurus()
+    {
+        $template = 'pengurus.template-pengurus';
+        $auth = 'Pengurus';
+        $objek = 'Umum';
+        $menu = 'pengurus';
+        $id_auth = auth::user('auth:pengurus')->id;
+        $pengumumans = Pengumuman::where('objek', 'Umum')->get();
+        return view('layanan.pengumuman', compact('template', 'pengumumans', 'auth', 'id_auth', 'objek', 'menu'));
+    }
+    public function pengurus_pengurus_id($id)
+    {
+        $template = 'pengurus.template-pengurus';
+        $auth = 'Pengurus';
+        $objek = 'Umum';
+        $menu = 'pengurus';
+        $id_auth = auth::user('auth:pengurus')->id;
+        $pengumuman = Pengumuman::find($id);
+        return view('layanan.pengumuman-id', compact('template', 'pengumuman', 'auth', 'id_auth', 'objek', 'menu'));
+    }
+    public function pengurus_pengurus_update($id)
+    {
+        $template = 'pengurus.template-pengurus';
+        $auth = 'Pengurus';
+        $objek = 'Umum';
+        $menu = 'pengurus';
+        $id_auth = auth::user('auth:pengurus')->id;
+        $pengumuman = Pengumuman::find($id);
+        return view('layanan.pengumuman-update', compact('template', 'pengumuman', 'auth', 'id_auth', 'objek', 'menu'));
+    }
+
+    //sistem crud
     public function store(Request $request)
     {
         $pengumuman = new Pengumuman();
